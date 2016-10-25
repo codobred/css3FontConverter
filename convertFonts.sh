@@ -22,8 +22,7 @@
 #########################################################################
 # OPTIONS                                                               #
 #########################################################################
-ARGS=`echo $* | tr ' ' '
-'`
+ARGS="$@"
 
 SHOW_FEATURES=`echo "$ARGS" | grep '\--show-features'`
 USE_FONT_WEIGHT=`echo "$ARGS" | grep '\--use-font-weight'`
@@ -75,7 +74,7 @@ then
 	exit 30
 fi
 
-for i in $ARGS
+for i in "$ARGS"
 do
 	if [ ! -f $i ]
 	then
